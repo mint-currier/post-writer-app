@@ -41,7 +41,7 @@ export default function UserAuthForm() {
           className={cn(buttonVariants({ variant: "outline" }))}
           onClick={() => {
             setIsGithubLoading(true);
-            signIn("github");
+            signIn("github", { redirectTo: "/dashboard" });
           }}
         >
           {isGithubLoading ? (
@@ -56,7 +56,7 @@ export default function UserAuthForm() {
           className={cn(buttonVariants({ variant: "outline" }))}
           onClick={() => {
             setIsGoogleLoading(true);
-            signIn("google");
+            signIn("google", { redirectTo: "/dashboard" });
           }}
         >
           {isGoogleLoading ? (

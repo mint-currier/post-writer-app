@@ -2,7 +2,6 @@ import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/session";
 import { postPatchSchema } from "@/lib/validations/post";
 import { NextRequest, NextResponse } from "next/server";
-import { title } from "process";
 import { z } from "zod";
 
 const routeContextSchema = z.object({

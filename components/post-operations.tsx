@@ -17,7 +17,6 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
 import { Icon } from "./icon";
@@ -42,6 +41,7 @@ async function deletePost(postId: string) {
 
     return true;
   } catch (error) {
+    console.log(error);
     toast.error("問題が発生しました。", {
       description: "記事の削除ができませんでした。もう一度お試しください。",
     });

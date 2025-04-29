@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/button";
 import { useState } from "react";
 import { Icon } from "./icon";
 import { type VariantProps } from "class-variance-authority";

@@ -4,6 +4,9 @@ import { getCurrentUser } from "@/lib/session";
 import { Post, User } from "@prisma/client";
 import { notFound, redirect } from "next/navigation";
 
+// import dynamic from "next/dynamic";
+// const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
+
 interface EditorProps {
   params: Promise<{ postId: string }>;
 }

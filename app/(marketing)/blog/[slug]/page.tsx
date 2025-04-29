@@ -20,9 +20,9 @@ function getPostFromSlug(slug: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const page = getPostFromSlug(params.slug);
+  const page = getPostFromSlug((await params).slug);
   return {
     title: page?.title,
     description: page?.description,

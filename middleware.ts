@@ -4,8 +4,9 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export default auth(async function middleware(req) {
+  console.log(req);
   const token = await getToken({req: req, secret: process.env.AUTH_SECRET});
-  // console.log(token);
+  console.log(token);
 
   const isAuth = !!token;
   const isAuthPage = 

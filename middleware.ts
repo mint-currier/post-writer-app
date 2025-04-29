@@ -14,12 +14,14 @@ export default auth(async function middleware(req) {
 
   if (isAuthPage) {
     if (isAuth) {
+      console.log("User is authenticated and trying to access auth page");
       return NextResponse.redirect(new URL("/dashboard", req.url));
     }
     return;
   }
 
   if (!isAuth) {
+    console.log("User is not authenticated and trying to access a protected page");
     return NextResponse.redirect(new URL("/login", req.url));
   }
 }

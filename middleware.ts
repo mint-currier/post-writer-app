@@ -6,7 +6,13 @@ import type { NextRequest } from 'next/server'
 export default auth(async function middleware(req) {
   console.log(req);
   console.log(process.env.AUTH_SECRET);
-  const token = await getToken({req: req, secret: process.env.AUTH_SECRET});
+  const token = await getToken({
+    req: req,
+    secret: process.env.AUTH_SECRET,
+    cookieName: process.env.NODE_ENV === 'production'
+                        ? '__Secure-authjs.session-token'
+                        : 'authjs.session-token',
+  });
   console.log(token);
 
   const isAuth = !!token;

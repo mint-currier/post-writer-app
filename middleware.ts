@@ -5,6 +5,7 @@ import type { NextRequest } from 'next/server'
 
 export default auth(async function middleware(req) {
   console.log(req);
+  console.log(process.env.AUTH_SECRET);
   const token = await getToken({req: req, secret: process.env.AUTH_SECRET});
   console.log(token);
 
